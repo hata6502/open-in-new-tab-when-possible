@@ -1,0 +1,11 @@
+{
+  "name": "Open in new tab when possible",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": ["contextMenus", "scripting", "webNavigation"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "type": "module",
+    "service_worker": "service-worker.js"
+  }
+}
