@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "manifest_version": 3,
   "description": "Make every link openable in a new tab. ",
-  "permissions": ["contextMenus", "scripting", "webNavigation"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": ["activeTab", "contextMenus", "scripting", "webNavigation"],
   "background": { "type": "module", "service_worker": "service-worker.js" },
   "icons": { "128": "icon.png" }
 }

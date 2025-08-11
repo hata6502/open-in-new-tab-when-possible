@@ -26,20 +26,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
       chrome.scripting.executeScript({
         target: { tabId: tab.id },
         func: () => {
-          const selection = getSelection();
-          if (!selection) {
-            throw new Error("No selection found");
-          }
-
-          const anchorElement =
-            selection.anchorNode instanceof HTMLElement
-              ? selection.anchorNode
-              : selection.anchorNode?.parentElement;
-          if (!anchorElement) {
-            return;
-          }
-
-          anchorElement.click();
+          document.activeElement?.click();
         },
       });
       break;
@@ -54,5 +41,5 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 chrome.contextMenus.create({
   id: "open-in-new-tab-when-possible",
   title: "Open in new tab when possible",
-  contexts: ["selection"],
+  contexts: ["all"],
 });
