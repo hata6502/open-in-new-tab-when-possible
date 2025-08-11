@@ -1,0 +1,1 @@
+# open-in-new-tab-when-possible
